@@ -5,7 +5,7 @@ nginxdir=/etc/nginx/sites-available
 vassaldir=/etc/uwsgi/vassals
 app=oxal.org
 
-sudo cp -iv $basedir/$app $nginxdir/$app.conf
+sudo cp -iv $basedir/$app.conf $nginxdir/$app.conf
 sudo cp -iv $basedir/$app.uwsgi.ini $vassaldir/$app.uwsgi.ini
 
 # restart the uwsgi vassal process
