@@ -3,12 +3,13 @@
 basedir=`pwd`
 nginxdir=/etc/nginx/sites-available
 vassaldir=/etc/uwsgi/vassals
+app=oxal.org
 
-sudo cp -iv $basedir/mitesh.ninja.conf $nginxdir/mitesh.ninja.conf
-sudo cp -iv $basedir/mitesh.ninja.uwsgi.ini $vassaldir/mitesh.ninja.uwsgi.ini
+sudo cp -iv $basedir/$app $nginxdir/$app.conf
+sudo cp -iv $basedir/$app.uwsgi.ini $vassaldir/$app.uwsgi.ini
 
 # restart the uwsgi vassal process
-sudo touch $vassaldir/mitesh.ninja.uwsgi.ini || echo "uwsgi touch failed."
+sudo touch $vassaldir/$app.uwsgi.ini || echo "uwsgi touch failed."
 
 # check nginx config and restart
 sudo nginx -t && echo "Now RUN: sudo service nginx restart" || echo "nginx config error"
