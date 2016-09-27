@@ -1,11 +1,14 @@
 body {
-    background-color: #000;
+    background-color: #111;
     margin-top: 50px;
-    color: #fff;
+    color: #eee;
+    font-size: 18px;
 }
 
-a {
-    color: #fff;
+blockquote {
+    border-left: 5px solid #ddd;
+    padding-left: 5px;
+    margin-left: 1.5rem;
 }
 
 @font-face {
