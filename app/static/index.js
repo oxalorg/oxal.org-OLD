@@ -16,11 +16,9 @@ var inputHandler = function (ans) {
     switch (ans.toLowerCase()) {
         case 'help':
             arkControl.print("Commands available:");
-            arkControl.print(" -- help");
             arkControl.print(" -- captain");
-            arkControl.print(" -- about");
+            arkControl.print(" -- ark");
             arkControl.print(" -- navigate");
-            arkControl.print(" -- clear");
             arkControl.printHTML("<br />");
             break;
 
