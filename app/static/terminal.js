@@ -17,6 +17,7 @@ var Terminal = (function () {
 	}
 
 	var firstPrompt = true;
+	var promptChar = '$';
 	promptInput = function (terminalObj, message, PROMPT_TYPE, callback) {
 		var shouldDisplayInput = (PROMPT_TYPE === PROMPT_INPUT)
 		var inputField = document.createElement('input')
@@ -28,10 +29,14 @@ var Terminal = (function () {
 		inputField.style.opacity = '0'
 		inputField.style.fontSize = '0.2em'
 
-		terminalObj._inputLine.textContent = '$ '
+		terminalObj._inputLine.textContent = promptChar + ' '
 		terminalObj._input.style.display = 'block'
 		terminalObj.html.appendChild(inputField)
 		fireCursorInterval(inputField, terminalObj)
+
+		var cleanInput = function (input) {
+			return input.slice(promptChar.length + 1, input.length)
+		}
 
 		if (message.length) terminalObj.print(PROMPT_TYPE === PROMPT_CONFIRM ? message + ' (y/n)' : message)
 
@@ -63,6 +68,7 @@ var Terminal = (function () {
 				var inputValue = inputField.value
 				if (shouldDisplayInput) terminalObj.print(inputValue)
 				terminalObj.html.removeChild(inputField)
+				inputValue = cleanInput(inputValue)
 				if (typeof(callback) === 'function') {
 					if (PROMPT_TYPE === PROMPT_CONFIRM) {
 						callback(inputValue.toUpperCase()[0] === 'Y' ? true : false)
@@ -108,6 +114,12 @@ var Terminal = (function () {
 		this.print = function (message) {
 			var newLine = document.createElement('div')
 			newLine.textContent = message
+			this._output.appendChild(newLine)
+		}
+
+		this.printHTML = function (message) {
+			var newLine = document.createElement('div')
+			newLine.innerHTML = message
 			this._output.appendChild(newLine)
 		}
 
@@ -174,11 +186,11 @@ var Terminal = (function () {
 		this.html.style.margin = '0'
 		this._innerWindow.style.padding = '10px'
 		this._input.style.margin = '0'
-		this._output.style.margin = '0';
-		this._cursor.style.background = 'white';
-		this._cursor.innerHTML = 'C'; //put something in the cursor..
-		this._cursor.style.display = 'none'; //then hide it
-		this._input.style.display = 'none';
+		this._output.style.margin = '0'
+		this._cursor.style.background = 'white'
+		this._cursor.innerHTML = 'C' //put something in the cursor..
+		this._cursor.style.display = 'none' //then hide it
+		this._input.style.display = 'none'
 	}
 
 	return TerminalConstructor
