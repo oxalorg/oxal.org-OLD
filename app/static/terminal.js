@@ -28,7 +28,7 @@ var Terminal = (function () {
 		inputField.style.opacity = '0'
 		inputField.style.fontSize = '0.2em'
 
-		terminalObj._inputLine.textContent = ''
+		terminalObj._inputLine.textContent = '$ '
 		terminalObj._input.style.display = 'block'
 		terminalObj.html.appendChild(inputField)
 		fireCursorInterval(inputField, terminalObj)
@@ -174,11 +174,11 @@ var Terminal = (function () {
 		this.html.style.margin = '0'
 		this._innerWindow.style.padding = '10px'
 		this._input.style.margin = '0'
-		this._output.style.margin = '0'
-		this._cursor.style.background = 'white'
-		this._cursor.innerHTML = 'C' //put something in the cursor..
-		this._cursor.style.display = 'none' //then hide it
-		this._input.style.display = 'none'
+		this._output.style.margin = '0';
+		this._cursor.style.background = 'white';
+		this._cursor.innerHTML = 'C'; //put something in the cursor..
+		this._cursor.style.display = 'none'; //then hide it
+		this._input.style.display = 'none';
 	}
 
 	return TerminalConstructor

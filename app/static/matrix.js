@@ -15,7 +15,7 @@ var columns = c.width/font_size;
 var drops = [];
 
 for(var x = 0; x < columns; x++)
-    drops[x] = c.height + 10; 
+    drops[x] = c.height + 10;
 
 var colors = ["#00F", "#0F0", "#F00", "#FF0", "#F0F"];
 var currentColor = "#00F"; // Default Color value
@@ -23,9 +23,11 @@ var currentColor = "#00F"; // Default Color value
 var drawTime = 50;
 var drawTimeValues = [40, 60, 80];
 
+// these 3 lines control terminal view
 var terminal = document.getElementById("terminal");
 terminal.style["border-color"] = currentColor;
-terminal.style.color = currentColor;
+arkControl.setTextColor(currentColor);
+
 function draw()
 {
     ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -38,10 +40,10 @@ function draw()
         ctx.fillStyle = currentColor;
         var text = matrix_char[Math.floor(Math.random()*matrix_char.length)];
         ctx.fillText(text, i*font_size, drops[i]*font_size);
-        
+
         if(drops[i]*font_size > c.height && Math.random() > 0.975)
             drops[i] = 0;
-        
+
         drops[i]++;
     }
 }
@@ -54,8 +56,9 @@ function randomize_matrix()
     while(currentColor == tempColor){
         currentColor = colors[Math.floor(Math.random()*colors.length)];
     }
+    // these two lines control terminal view
     terminal.style["border-color"] = currentColor;
-    terminal.style.color = currentColor;
+    arkControl.setTextColor(currentColor);
 
     var tempTime = drawTime;
     while(drawTime == tempTime){
@@ -65,5 +68,3 @@ function randomize_matrix()
     clearInterval(anim);
     anim = setInterval(draw, drawTime);
 }
-
-
