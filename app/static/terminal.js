@@ -86,7 +86,7 @@ var Terminal = (function () {
 
 	var terminalBeep
 
-	var TerminalConstructor = function (id) {
+	var TerminalConstructor = function (className, id) {
 		if (!terminalBeep) {
 			terminalBeep = document.createElement('audio')
 			var source = '<source src="http://www.erikosterberg.com/terminaljs/beep.'
@@ -96,6 +96,9 @@ var Terminal = (function () {
 
 		this.html = document.createElement('div')
 		this.html.className = 'Terminal'
+		if (typeof(className) == 'string') {
+			this.html.className += ' ' + className
+		}
 		if (typeof(id) === 'string') { this.html.id = id }
 
 		this._innerWindow = document.createElement('div')

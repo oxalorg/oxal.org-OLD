@@ -1,36 +1,28 @@
-/*basic reset*/
-* {
-    margin: 0; padding: 0;
-}
-
 /*adding a black bg to the body to make things clearer*/
 body {
     background: black;
 }
-canvas {
-    display: block;
+
+#c {
+    z-index: 0;
 }
 
 #myName{
-    margin: auto;
-    padding: auto;
-    position: absolute;
-    z-index: 1;
-    top: 5%;
-    left: 10%;
+    /*margin: auto;*/
+    /*padding: auto;*/
+    /*position: absolute;*/
+    /*z-index: 1;*/
+    /*top: 5%;*/
+    /*left: 10%;*/
     color: white;
-    font-size: 50px;
+    /*font-size: 50px;*/
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-}
-
-#myName h1 {
-    font-size: 1em;
 }
 
 #knowMore{
     text-decoration: none;
     color: white;
-    font-size: 0.6em;
+    /*font-size: 0.6em;*/
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
@@ -49,11 +41,8 @@ canvas {
     overflow-y: auto;
     color: #eee;
     border: 2px solid cyan;
-    position: absolute;
-    top: 30%;
-    margin: auto;
-    left: 10%;
-    width: 80%;
-    min-height: 300px;
-    height: 40%;
+    position: relative;
+    z-index: 1;
+    min-height: 320px;
+    max-height: 480px;
 }

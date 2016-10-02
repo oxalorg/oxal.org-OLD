@@ -1,4 +1,4 @@
-var arkControl = new Terminal('terminal');
+var arkControl = new Terminal('twelve columns', 'terminal');
 
 // set styling to nothing because it's
 // handled by matrix.css and matrix.js
@@ -8,7 +8,8 @@ arkControl.setTextColor("");
 arkControl.setBackgroundColor("");
 
 // append it to body
-document.body.appendChild(arkControl.html);
+var terminalParent = document.getElementById('terminal-parent');
+terminalParent.appendChild(arkControl.html);
 
 // global inputHandler for prompts
 var inputHandler = function (ans) {

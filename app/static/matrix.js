@@ -3,8 +3,12 @@
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 
-c.height = window.innerHeight;
-c.width = window.innerWidth;
+window.onresize = function onresize() {
+	width = c.width = window.innerWidth;
+	height = c.height = window.innerHeight;
+}
+
+window.onresize();
 
 var matrix_char = "0123456789@#$%^&*aBcCoOqsStuVwXzZ田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
 matrix_char = matrix_char.split("");
