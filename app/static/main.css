@@ -5,9 +5,13 @@ body {
     font-size: 18px;
 }
 
+.skeletonColor {
+    color: #1EAEDB
+}
+
 blockquote {
-    border-left: 5px solid #ddd;
-    padding-left: 5px;
+    border-left: 5px solid #1EAEDB;
+    padding-left: 10px;
     margin-left: 1.5rem;
 }
 

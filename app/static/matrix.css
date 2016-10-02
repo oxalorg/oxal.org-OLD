@@ -16,17 +16,21 @@ canvas {
     padding: auto;
     position: absolute;
     z-index: 1;
-    top: 100px;
-    left: 100px;
+    top: 5%;
+    left: 10%;
     color: white;
     font-size: 50px;
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
+#myName h1 {
+    font-size: 1em;
+}
+
 #knowMore{
     text-decoration: none;
     color: white;
-    font-size: 25px;
+    font-size: 0.6em;
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
@@ -37,7 +41,7 @@ canvas {
     -4px -4px 2px #000,
      4px -4px 2px #000,
      -4px 4px 2px #000,
-      4px 4px 2px #000;  
+      4px 4px 2px #000;
 }
 
 #terminal {
@@ -50,5 +54,6 @@ canvas {
     margin: auto;
     left: 10%;
     width: 80%;
+    min-height: 300px;
     height: 40%;
 }

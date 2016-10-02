@@ -11,6 +11,12 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/weapons')
+@app.route('/weapon-stash')
+def weapons():
+    return render_template('weapon-stash.html')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404

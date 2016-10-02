@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Weapon Stash - oxalorg{% endblock %}
+{% block body %}
+<style>
+    h1,h3{
+        font-family: 'NjNaruto';
+    }
+</style>
+<div class="container">
+    <h1>weapon stash</h1>
+    <h3></h3>
+    <ul>
+      <li>
+        <p><strong>Ninshu</strong>: A complete compiler/interpreter for a self made programming language which borrows its syntax from C and Python. Lexing, tokenization and parsing is done using PLY, python ports of lex/yacc. The parsed code is then converted ianto an abstract syntax tree using the visitor dispatching method after which it is run over and interpreted.</p>
+      </li>
+      <li>
+        <p><strong>ghPublish</strong>: A complete command line blogging solution using GitHub Pages. It allows the users to start publishing posts on their jekyll and github powered blogs instantly. Supports authentication by creating api access tokens and storing them locally for multiple users. Posts written in markdown can be rendered to html and previewed locally. It uses the GitHub API and hence does not need git and jekyll installed on the client system.</p>
+      </li>
+      <li>
+        <p><strong>dystic</strong>:­A static site generator using dynamic principles. Instead of using dynamic code and accessing a server side database, it treats the filesystem itself as a database creating a complete static website. Supports selective building, and hierarchical WYSIWYG model of structuring content. Also supports complete markdown rendering and html templating.</p>
+      </li>
+      <li>
+        <p><strong>sakura</strong>:­A drop in css framework which works out of the box on your entire site without having to change anything in your existing HTML files. It works directly on inbuilt HTML tags and is completely responsive for mobile usage. Supports duo­tone color customization.</p>
+      </li>
+      <li>
+        <p><strong>VisaApplication</strong>: Android application to process and manage visa applications of employees. All the data and business logic is stored in a remote server which is accessible using a json api. Provides email notifications to users who registered or have been selected by the higher staff to be selected for further processing.</p>
+      </li>
+    </ul>
+    <p><a href="{{ url_for('index') }}">go somewhere nice</a></p>
+</div>
+{% endblock %}
