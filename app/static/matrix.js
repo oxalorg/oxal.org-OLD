@@ -21,8 +21,8 @@ var drops = [];
 for(var x = 0; x < columns; x++)
     drops[x] = c.height + 10;
 
-var colors = ["#00F", "#0F0", "#F00", "#FF0", "#F0F"];
-var currentColor = "#00F"; // Default Color value
+var colors = ["#00bbff", "#0F0", "#a8a0ff", "#ffa73d"];
+var currentColor = "#00bbff"; // Default Color value
 
 var drawTime = 50;
 var drawTimeValues = [40, 60, 80];
